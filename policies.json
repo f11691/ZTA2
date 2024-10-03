@@ -1,0 +1,67 @@
+{
+    "iot_device1": {
+        "entity_type": "device",
+        "generate_interval": 60,
+        "send_interval": 120,
+        "min_send_interval": 120,
+        "allowed_destinations": [
+            "server"
+        ],
+        "allowed_resources": [
+            "iot_device1_data"
+        ],
+        "access_level": "full",
+        "quarantine": false,
+        "state": "Normal"
+    },
+    "iot_device2": {
+        "entity_type": "device",
+        "generate_interval": 60,
+        "send_interval": 120,
+        "min_send_interval": 120,
+        "allowed_destinations": [
+            "server"
+        ],
+        "allowed_resources": [],
+        "access_level": "full",
+        "quarantine": false,
+        "state": "Normal"
+    },
+    "server": {
+        "entity_type": "server",
+        "allowed_sources": [
+            "iot_device1",
+            "iot_device2"
+        ],
+        "receive_interval": 120,
+        "allowed_resources": [
+            "data_read"
+        ],
+        "restricted_resources": [
+            "data_write",
+            "data_edit",
+            "data_delete"
+        ],
+        "access_level": "read-only",
+        "quarantine": false,
+        "state": "Normal"
+    },
+    "user": {
+        "entity_type": "user",
+        "allowed_resources": [
+            "iot_device1_data",
+            "server_data_read"
+        ],
+        "restricted_resources": [
+            "iot_device2_data",
+            "server_data_write",
+            "server_data_edit",
+            "server_data_delete"
+        ],
+        "access_level": "no-access",
+        "authentication_required": true,
+        "ip_address": "192.168.1.100",
+        "quarantine": false,
+        "state": "Normal"
+    }
+}

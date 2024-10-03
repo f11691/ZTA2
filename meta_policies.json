@@ -1,0 +1,38 @@
+[
+  {
+    "name": "enforce_min_send_interval",
+    "description": "Devices must not send data more frequently than the minimum allowed interval.",
+    "type": "device",
+    "condition": "send_interval >= min_send_interval"
+  },
+  {
+    "name": "enforce_user_authentication",
+    "description": "Users must authenticate and their IP address must match.",
+    "type": "user",
+    "condition": "authentication_required == True"
+  },
+  {
+    "name": "prevent_user_data_modification",
+    "description": "Users cannot write, edit, or delete server data.",
+    "type": "user",
+    "condition": "includes(restricted_resources, ['server_data_write', 'server_data_edit', 'server_data_delete'])"
+  },
+  {
+    "name": "no_write_access_high_risk",
+    "description": "Entities in 'High Risk' state cannot have write access.",
+    "type": "any",
+    "condition": "state != 'High Risk' or access_level != 'full'"
+  },
+  {
+    "name": "no_access_quarantined",
+    "description": "Entities in 'Quarantined' state cannot have any access.",
+    "type": "any",
+    "condition": "state != 'Quarantined' or access_level == 'no-access'"
+  },
+  {
+    "name": "read_only_alert_sensitive",
+    "description": "Entities in 'Alert' state and belonging to sensitive segments must have read-only access.",
+    "type": "any",
+    "condition": "state != 'Alert' or segment_sensitivity != 'high' or access_level == 'read-only'"
+  }
+]

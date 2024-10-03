@@ -1,0 +1,5 @@
+﻿entity_id;certificate_validation_time;installer_signature;approval_signature;authenticated_status
+server;01.10.24 12:00;signature1;approval1;authenticated
+user;01.10.24 12:01;signature2;approval2;authenticated
+iot1;01.10.24 12:02;signature3;approval3;authenticated
+iot2;01.10.24 12:03;signature4;approval4;authenticated

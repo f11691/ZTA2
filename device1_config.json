@@ -1,0 +1,12 @@
+{
+  "iot_device1": {
+    "device_id": "iot_device1",
+    "server_url": "http://192.52.33.191:5000",
+    "pep_url": "http://192.52.34.188:5000",
+    "data_generation_interval": 60,
+    "send_interval": 120,
+    "data_type": "temperature",
+    "min_value": 30,
+    "max_value": 40
+  }
+}

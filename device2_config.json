@@ -1,0 +1,12 @@
+{
+  "iot_device2": {
+    "device_id": "iot_device2",
+    "server_url": "http://192.52.33.191:5000",
+    "pep_url": "http://192.52.34.188:5000",
+    "data_generation_interval": 30,
+    "send_interval": 60,
+    "data_type": "humidity",
+    "min_value": 20,
+    "max_value": 80
+  }
+}
